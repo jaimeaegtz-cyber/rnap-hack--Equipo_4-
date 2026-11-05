@@ -1,1 +1,1 @@
-Nigga # rnap-hack--Equipo-
+ # rnap-hack--Equipo-
