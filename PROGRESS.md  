@@ -1,1 +1,8 @@
+# Progress log
 
+## CP2 - 2026-11-08
+
+- What we have done: We chose Track 2 (News in 60 Seconds). The problem is to summarize a Spanish news article in 120 words or less using only facts from the article. The main metric is ROUGE (ROUGE-1, ROUGE-2 and ROUGE-L), plus the percentage of summaries within 120 words. We loaded XL-Sum (Spanish) with its train/validation/test split (38,110 / 4,763 / 4,763 articles) before training. We built a TF-IDF extractive baseline (sentence scores from TF-IDF weights, length of 60 words chosen on validation) and applied mT5_multilingual_XLSum without fine-tuning. Both were evaluated on the same 200 test articles. Results on test: baseline ROUGE-1 18.78, ROUGE-2 2.82, ROUGE-L 12.20 in 0.32 s; mT5 ROUGE-1 30.11, ROUGE-2 11.34, ROUGE-L 22.98 in 83.68 s on GPU. Both kept 100% of summaries within 120 words. The comparison table and conclusion are in sections 1 to 3 of notebooks/entrenamiento.ipynb.
+- What we haven't done yet: Fine-tuned Transformer solution, error analysis, fact guard, interface.
+- Next step: Fine-tune mT5 on the training set, evaluate on the test set with the same metrics, and build the Gradio interface (Phase 2).
+- Who did what: Jaime Esquivel: ... / Alberto Moreno: ... / Jared Dávila: ... / Randhu: ...
